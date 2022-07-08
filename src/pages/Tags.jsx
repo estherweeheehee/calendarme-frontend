@@ -10,7 +10,7 @@ const Tags = () => {
     const [tagsData, setTagsData] = useState([])
 
     useEffect(() => {
-        fetch(`http://calendarme-backend.herokuapp.com/searchtags/${tagTerm}`)
+        fetch(`https://calendarme-backend.herokuapp.com/searchtags/${tagTerm}`)
         .then((response) => response.json())
         .then((data) => {
             if (!data.data) {

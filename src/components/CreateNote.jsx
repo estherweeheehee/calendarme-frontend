@@ -31,7 +31,7 @@ const CreateNote = ({addNote}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch("http://calendarme-backend.herokuapp.com/api", {
+        fetch("https://calendarme-backend.herokuapp.com/api", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

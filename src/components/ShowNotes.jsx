@@ -8,7 +8,7 @@ const ShowNotes = ({date, title, post, tag, index, i, wholeNote, removeNote, upd
     )
 
     const handleDelete = () => {
-        fetch(`http://calendarme-backend.herokuapp.com/${index}`, {
+        fetch(`https://calendarme-backend.herokuapp.com/${index}`, {
             method: "DELETE"
             })
         .then((response) => response.json())
@@ -34,7 +34,7 @@ const ShowNotes = ({date, title, post, tag, index, i, wholeNote, removeNote, upd
 
    const handleSubmitEdit = () => {
         
-        fetch(`http://calendarme-backend.herokuapp.com/api/${index}`, {
+        fetch(`https://calendarme-backend.herokuapp.com/api/${index}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

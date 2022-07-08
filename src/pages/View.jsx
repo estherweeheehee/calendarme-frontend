@@ -44,7 +44,7 @@ const View = () => {
   };
 
   useEffect(() => {
-    fetch(`http://calendarme-backend.herokuapp.com/api/${month}`)
+    fetch(`https://calendarme-backend.herokuapp.com/api/${month}`)
       .then((response) => response.json())
       .then((data) => {
         if (!data.data) {

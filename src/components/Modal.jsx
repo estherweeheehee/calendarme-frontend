@@ -9,7 +9,7 @@ const Modal = ({ closeModal, modalNote, deleteNote, editNote }) => {
 
   const handleDelete = () => {
     deleteNote(modalNote.id);
-    fetch(`http://calendarme-backend.herokuapp.com/api/${modalNote.id}`, {
+    fetch(`https://calendarme-backend.herokuapp.com/api/${modalNote.id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -34,7 +34,7 @@ const Modal = ({ closeModal, modalNote, deleteNote, editNote }) => {
   };
 
   const handleSubmitEdit = () => {
-    fetch(`http://calendarme-backend.herokuapp.com/${modalNote.id}`, {
+    fetch(`https://calendarme-backend.herokuapp.com/${modalNote.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
