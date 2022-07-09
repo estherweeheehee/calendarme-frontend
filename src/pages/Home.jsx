@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <>
         <div className="dates">
-            <Link to="/view?month=01">JANUARY</Link>
+            
             <p className="date" onClick={() => handleClick("01")}>JANUARY</p>
             <p className="date" onClick={() => handleClick("02")}>FEBRUARY</p>
             <p className="date" onClick={() => handleClick("03")}>MARCH</p>

@@ -13,8 +13,11 @@ import Home from "./Home";
 const View = () => {
   let params = new URL(document.location).searchParams;
   let month = params.get("month");
-
   const [mm, setMM] = useState(month);
+
+  
+
+  
   let navigate = useNavigate();
   const days = calendar[month];
 
@@ -25,6 +28,23 @@ const View = () => {
   const [modalNote, setModalNote] = useState({});
 
   const [tagsData, setTagsData] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://calendarme-backend.herokuapp.com/api/${month}`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (!data.data) {
+          console.log("failed to fetch")
+          setNil(true);
+          
+        } else {
+          setDisplay(data.data);
+
+          setNil(false);
+          
+        }
+      });
+  }, [month]);
 
   const openModal = (note) => {
     setModalNote(note);
@@ -62,22 +82,7 @@ const View = () => {
       });
   }
 
-  useEffect(() => {
-    fetch(`https://calendarme-backend.herokuapp.com/api/${month}`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (!data.data) {
-          console.log("failed to fetch")
-          setNil(true);
-          
-        } else {
-          setDisplay(data.data);
-
-          setNil(false);
-          
-        }
-      });
-  }, [month]);
+  
 
   // const NotesContainer = () => {
   //     if (nil === true) {
