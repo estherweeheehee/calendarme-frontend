@@ -74,7 +74,7 @@ const View = () => {
           
         }
       });
-  }, [mm]);
+  }, []);
 
   // const NotesContainer = () => {
   //     if (nil === true) {
