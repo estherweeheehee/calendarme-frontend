@@ -44,7 +44,7 @@ const View = () => {
   };
 
   const fetchData = () => {
-    fetch(`https://calendarme-backend.herokuapp.com/api/${mm}`)
+    fetch(`https://calendarme-backend.herokuapp.com/api/${month}`)
       .then((response) => response.json())
       .then((data) => {
         if (!data.data) {
@@ -60,7 +60,7 @@ const View = () => {
   }
 
   useEffect(() => {
-    fetch(`https://calendarme-backend.herokuapp.com/api/${mm}`)
+    fetch(`https://calendarme-backend.herokuapp.com/api/${month}`)
       .then((response) => response.json())
       .then((data) => {
         if (!data.data) {
@@ -102,9 +102,9 @@ const View = () => {
   //     return result
   // }
 
-  const addNote = (mon, note) => {
+  const addNote = (mm, note) => {
     
-    if (mm === mon) {
+    if (mm === month) {
       
       fetchData()
     }
