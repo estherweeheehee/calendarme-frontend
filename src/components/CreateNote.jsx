@@ -41,7 +41,7 @@ const CreateNote = ({addNote}) => {
           })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
+                
                 addNote(note["month"], note)
                 setNote({
                     title: "",

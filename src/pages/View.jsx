@@ -11,7 +11,7 @@ import MonthlyTags from "../components/MonthlyTags";
 
 const View = () => {
   const { month } = useParams();
-  const [mm, setMM] = useState(month);
+  // const [mm, setMM] = useState(month);
   let navigate = useNavigate();
   const days = calendar[month];
 
@@ -42,6 +42,22 @@ const View = () => {
     const pos = display.map((entry) => entry.id).indexOf(i);
     setDisplay([...display.slice(0, pos), note, ...display.slice(pos + 1)]);
   };
+
+  const fetchData = () => {
+    fetch(`https://calendarme-backend.herokuapp.com/api/${month}`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (!data.data) {
+          setNil(true);
+          return;
+        } else {
+          setDisplay(data.data);
+
+          setNil(false);
+          return;
+        }
+      });
+  }
 
   useEffect(() => {
     fetch(`https://calendarme-backend.herokuapp.com/api/${month}`)
@@ -86,10 +102,10 @@ const View = () => {
   // }
 
   const addNote = (mm, note) => {
+    
     if (mm === month) {
-      setNil(false)
-      setDisplay([...display, note]);
-
+      
+      fetchData()
     }
   };
 
