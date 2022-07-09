@@ -87,7 +87,9 @@ const View = () => {
 
   const addNote = (mm, note) => {
     if (mm === month) {
+      setNil(false)
       setDisplay([...display, note]);
+
     }
   };
 
