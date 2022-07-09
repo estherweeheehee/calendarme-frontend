@@ -64,13 +64,14 @@ const View = () => {
       .then((response) => response.json())
       .then((data) => {
         if (!data.data) {
+          console.log("failed to fetch")
           setNil(true);
-          return;
+          
         } else {
           setDisplay(data.data);
 
           setNil(false);
-          return;
+          
         }
       });
   }, [mm]);
