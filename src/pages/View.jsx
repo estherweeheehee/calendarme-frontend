@@ -8,9 +8,12 @@ import Dates from "../components/Dates";
 import moment from "moment";
 import Modal from "../components/Modal";
 import MonthlyTags from "../components/MonthlyTags";
+import Home from "./Home";
 
 const View = () => {
-  const { month } = useParams();
+  let params = new URL(document.location).searchParams;
+  let month = params.get("month");
+
   const [mm, setMM] = useState(month);
   let navigate = useNavigate();
   const days = calendar[month];
@@ -74,7 +77,7 @@ const View = () => {
           
         }
       });
-  }, [mm]);
+  }, [month]);
 
   // const NotesContainer = () => {
   //     if (nil === true) {
@@ -173,6 +176,9 @@ const View = () => {
 
   return (
     <>
+    <Home />
+    {/* {month ?  */}
+      <div>
       {modalIsOpen === true ? (
         <Modal
           closeModal={closeModal}
@@ -190,6 +196,9 @@ const View = () => {
 
       <GenerateTags />
       <CreateNote addNote={addNote} />
+        </div>
+        {/* :
+        null} */}
     </>
   );
 };

@@ -3,7 +3,7 @@ import { Link, Outlet, useNavigate } from "react-router-dom"
 const Home = () => {
     let navigate = useNavigate();
     const handleClick = (month) => {
-        navigate(`/view/${month}`)
+        navigate(`/view?month=${month}`)
     }
     return (
         <>

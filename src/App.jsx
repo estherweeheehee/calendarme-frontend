@@ -16,10 +16,10 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Main />}>
-              <Route path="/" element={<Home />}>
-                <Route path="/view/:month" element={<View />} />
+              <Route path="/" element={<Home />} />
+                <Route path="/view" element={<View />} />
                 <Route path="/tags" element={<Tags />} />
-              </Route>
+              
             </Route>
           </Routes>
         </BrowserRouter>
