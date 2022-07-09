@@ -1,9 +1,9 @@
 import { Link, Outlet, useNavigate } from "react-router-dom"
 
-const Home = () => {
+const Months = ({changeMonth}) => {
     let navigate = useNavigate();
     const handleClick = (month) => {
-        
+        changeMonth(month)
         navigate(`/view?month=${month}`)
     }
     return (
@@ -29,4 +29,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Months

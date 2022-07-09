@@ -3,11 +3,17 @@ import AllTags from "../components/Tags/AllTags";
 import IndivTags from "../components/Tags/IndivTags";
 
 const Tags = () => {
-  let params = new URL(document.location).searchParams;
+  let params = (new URL(document.location)).searchParams;
   let tagTerm = params.get("tag");
+  const [tag, setTag] = useState(tagTerm)
   const [nil, setNil] = useState(false);
   const [tagsData, setTagsData] = useState([]);
   const [allTags, setAllTags] = useState({});
+
+  const changeTag = (term) => {
+    setTag(term)
+    
+  }
 
   useEffect(() => {
     fetch(`https://calendarme-backend.herokuapp.com/retrievealltags`)
@@ -43,7 +49,7 @@ const Tags = () => {
           }
         });
     } 
-  }, []);
+  }, [tagTerm]);
 
   const DisplayTags = () => {
     if (nil === true) {
@@ -58,7 +64,7 @@ const Tags = () => {
   return (
     <>
       <h1>ALL TAGS</h1>
-        <AllTags allTags={allTags}/>
+        <AllTags allTags={allTags} changeTag={changeTag}/>
 
       {tagTerm ? (
         <>

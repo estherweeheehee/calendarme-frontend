@@ -8,17 +8,13 @@ import Dates from "../components/Dates";
 import moment from "moment";
 import Modal from "../components/Modal";
 import MonthlyTags from "../components/MonthlyTags";
-import Home from "./Home";
+import Months from "./Months";
 
 const View = () => {
-  let params = new URL(document.location).searchParams;
+  let params = (new URL(document.location)).searchParams;
   let month = params.get("month");
   const [mm, setMM] = useState(month);
-
-  
-
-  
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const days = calendar[month];
 
   const [display, setDisplay] = useState([]);
@@ -27,7 +23,7 @@ const View = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalNote, setModalNote] = useState({});
 
-  const [tagsData, setTagsData] = useState([]);
+  
 
   useEffect(() => {
     fetch(`https://calendarme-backend.herokuapp.com/api/${month}`)
@@ -44,7 +40,11 @@ const View = () => {
           
         }
       });
-  }, [month]);
+  }, [mm]);
+
+  const changeMonth = (mon) => {
+    setMM(mon)
+  }
 
   const openModal = (note) => {
     setModalNote(note);
@@ -82,34 +82,6 @@ const View = () => {
       });
   }
 
-  
-
-  // const NotesContainer = () => {
-  //     if (nil === true) {
-  //         return;
-  //     }
-  //     const result = []
-
-  //     for (let i =0; i < display.length; i++) {
-  //         result.push(
-  //             <ShowNotes
-  //                 key={i}
-  //                 i={i}
-  //                 index={display[i]["id"]}
-  //                 date={display[i]["date"]}
-  //                 title={display[i]["title"]}
-  //                 post={display[i]["post"]}
-  //                 tag={display[i]["tag"]}
-  //                 removeNote={removeNote}
-  //                 wholeNote={display[i]}
-  //                 updateNote={updateNote}
-  //             />
-
-  //         )
-  //     }
-  //     return result
-  // }
-
   const addNote = (mm, note) => {
     
     if (mm === month) {
@@ -118,18 +90,6 @@ const View = () => {
     }
   };
 
-  // const removeNote = (i) => {
-  //     const newArr = display.filter((note, index) => i !== index)
-  //     setDisplay(newArr)
-  // }
-
-  // const updateNote = (i, edited) => {
-  //     setDisplay([
-  //         ...display.slice(0, i),
-  //         edited,
-  //         ...display.slice(i + 1)
-  //     ])
-  // }
 
   const DisplayMonth = (month) => {
     for (let entry in months) {
@@ -181,7 +141,7 @@ const View = () => {
 
   return (
     <>
-    <Home />
+    <Months changeMonth={changeMonth}/>
     {/* {month ?  */}
       <div>
       {modalIsOpen === true ? (
