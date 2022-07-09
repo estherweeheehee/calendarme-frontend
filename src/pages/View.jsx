@@ -11,7 +11,7 @@ import MonthlyTags from "../components/MonthlyTags";
 
 const View = () => {
   const { month } = useParams();
-  // const [mm, setMM] = useState(month);
+  const [mm, setMM] = useState(month);
   let navigate = useNavigate();
   const days = calendar[month];
 
@@ -73,7 +73,7 @@ const View = () => {
           return;
         }
       });
-  }, [month]);
+  }, [mm]);
 
   // const NotesContainer = () => {
   //     if (nil === true) {
