@@ -2,13 +2,15 @@
 
 body {
   text-align: center;
+  background-color:#dce2f0;
+  color:#485064;
 }
 
 .title {
   font-family: 'Permanent Marker', cursive;
   font-size: 4em;
   width: 50vw;
-  margin: 2em auto;
+  margin: 2em auto 1.5em auto;
   /* color:#2b3957; */
   color:#dbe5f7;
   /* text-shadow: 1px 1px #c3c3c5; */
@@ -16,9 +18,19 @@ body {
 
 .monthButton, .tagButton {
   margin: 0 2em 0 2em;
-  background-color:#b8c8ec;
+  background-color: #4a6197;
   padding: 1em;
   border-radius: 20px;
+  border: 5px solid #dce2f0;
+  color:#dce2f0;
+  
+}
+
+.monthButton:hover, .tagButton:hover {
+  background-color:#b8c8ec;
+  border: 5px solid #4a6197;
+  color:#4a6197;
+  
 }
 
 .background-video {
@@ -34,7 +46,8 @@ body {
 }
 
 nav {
-  background-color: #ffffff;
+  /* background-color: #d8dfef; */
+  background-color:#dce2f0;
   color: rgb(38, 56, 100);
   display: flex;
   align-items: center;
@@ -52,9 +65,18 @@ nav {
   margin: 0 3px 0 3px;
 }
 
+.navIcons:hover {
+  color: #65708b;
+}
+
 .navButton {
   font-size:small;
   margin-left: 10px;
+
+}
+
+.navButton:hover {
+  border-bottom: 2px solid;
 }
 
 nav img {
@@ -81,8 +103,9 @@ nav a {
 }
 
 nav a:hover {
-  background: #b3b9c6;
+  /* background: #b3b9c6; */
   color: #65708b;
+
   
 }
 
@@ -90,6 +113,7 @@ nav a:hover {
 form {
   width: max-content;
   margin: auto;
+  border-radius: 10px;
 }
 
 input {
@@ -97,13 +121,17 @@ input {
   width: 150px;
   border: none;
   padding: 3px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
+  background-color:#dce2f0;
+  border-radius: 5px;
 }
 
 textarea {
   margin: 5px;
   border: none;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
+  background-color:#dce2f0;
+  border-radius: 5px;
 }
 
 label {
@@ -115,7 +143,7 @@ label {
 
 .createNoteContainer {
   margin: 30px auto 50px auto;
-  background-color: rgb(248, 247, 246);
+  background-color:#b5c1dc;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   padding: 10px 20px;
   text-align: left;
@@ -135,6 +163,12 @@ label {
   border: none;
   outline: none;
   font-weight: bolder;
+  border-radius: 5px;
+}
+
+.createButton:hover {
+  background-color: #e9ecfa;
+  color: #6c7a9a;
 }
 
 
@@ -173,6 +207,7 @@ label {
   align-items: center;
   flex-wrap: wrap;
   justify-content:space-evenly;
+  border-radius: 20px;
   
 }
 
@@ -187,6 +222,7 @@ label {
 .date:hover {
   background-color: #dfe2ee;
   color: #4a6197;
+  border-radius: 10px;
 }
 
 .dateSelector {
@@ -198,10 +234,11 @@ label {
   flex-wrap: wrap;
   width: 80vw;
   margin: auto;
+  justify-content: center;
 }
 
 .displayNote {
-  background-color: rgb(246, 244, 241);
+  background-color: rgb(229, 237, 247);
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   padding: 10px;
   width: max-content;
@@ -209,12 +246,16 @@ label {
 }
 
 .displayDate {
-  background-color: rgb(248, 247, 246);
+  /* background-color: rgb(248, 247, 246); */
+  background-color:#e9ecfa;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
+  margin: 5px;
+  /* border: 1px solid rgb(47, 55, 79); */
   width: 150px;
+  border-radius: 10px;
 }
 
 .modalOptions {
@@ -229,6 +270,8 @@ label {
   margin-right: 10px;
   padding: 6px;
   color:#eaebf1;
+  border-radius: 5px;
+  border: 3px solid #6c7a9a;
 }
 
 .editButton {
@@ -237,7 +280,22 @@ label {
   padding: 6px;
   color:#eaebf1;
   margin-right: 10px;
-  
+  border-radius: 5px;
+  border: 3px solid #6c7a9a;
+}
+
+.editButton:hover, .deleteButton:hover {
+  background-color: #eaebf1;
+  color: #6c7a9a;
+  border: 3px solid #6c7a9a;
+}
+
+.editBox {
+  border-radius: 5px;
+  background-color: #6c7a9a;
+  color: #eaebf1;
+  padding: 10px;
+  margin: 5px;
 }
 
 .tag {
@@ -245,6 +303,11 @@ label {
   color:#eaebf1;
   padding: 3px;
   font-size: small;
+  border-radius: 5px;
+}
+
+.tag:hover {
+  background-color: #6c7a9a;
 }
 
 .datesHeader {
@@ -264,17 +327,20 @@ label {
 .modal {
   position: fixed;
   z-index: 20;
-  background: #fff;
+  background-color:#dee5f5;
   width: 500px;
 
   /* Center the modal */
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  border-radius: 10px;
 }
 
 .modal__header {
   background-color: #6c7a9a;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -300,18 +366,24 @@ label {
 
 .monthlyTags {
   width: 30vw;
-  background-color: rgb(248, 247, 246);
+  background-color:#e9ecfa;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   display: flex;
   flex-wrap: wrap;
   justify-content:space-evenly;
   margin: 50px auto;
+  border-radius: 10px;
 }
 
 .indivMonthlyTag {
   background-color: rgb(47, 55, 79);
   padding: 5px 7px 5px 7px;
   color:#eaebf1;
+  border-radius: 5px;
+}
+
+.indivMonthlyTag:hover {
+  background-color: #6c7a9a;
 }
 
 .indivTags {
@@ -333,6 +405,7 @@ label {
 .allTagsHeader, .monthsViewHeader {
   font-family: 'Permanent Marker', cursive;
   margin-top: 2em;
+  color:#485064;
 }
 
 .allTags {
@@ -347,10 +420,20 @@ label {
 
 .indivAllTags {
   display: flex;
-  background-color: #65708b;
+  /* background-color: #65708b; */
+  background-color: #4a6197;
   margin: 10px;
   padding: 10px;
   height: max-content;
-  color:#dce2f0;
+  /* color:#dce2f0; */
   font-weight: bold;
+  border-radius: 20px;
+  border: 5px solid #dce2f0;
+  color:#dce2f0;
+}
+
+.indivAllTags:hover {
+  background-color:#b8c8ec;
+  border: 5px solid #4a6197;
+  color:#4a6197;
 }

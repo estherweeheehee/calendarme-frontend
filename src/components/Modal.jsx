@@ -60,12 +60,13 @@ const Modal = ({ closeModal, modalNote, deleteNote, editNote }) => {
             &times;
           </button>
         </header>
+        
         <main className="modal__main">
           <p>{moment(modalNote.date).format("DD MMMM YYYY").toUpperCase()}</p>
-
+          <br/>
           {toggleEdit ? (
             <>
-              <label htmlFor="post">Post</label>
+              <label htmlFor="post">EDIT POST</label>
               <br />
               <textarea
                 className="editBox"
@@ -77,7 +78,8 @@ const Modal = ({ closeModal, modalNote, deleteNote, editNote }) => {
                 onChange={() => handleChange(event, "post")}
               />
               <br />
-              <label htmlFor="tag">Tag</label>
+              <label htmlFor="tag">EDIT TAG</label>
+              <br/>
               <input
                 className="editBox"
                 type="text"
@@ -97,7 +99,7 @@ const Modal = ({ closeModal, modalNote, deleteNote, editNote }) => {
           ) : (
             <>
               <p>{editedNote.post}</p>
-              
+              <br/>
               <p>
                 tag: <span className="tag" onClick={() => navigate(`/tags?tag=${editedNote.tag}`)}>{editedNote.tag}</span>
               </p>
