@@ -63,7 +63,8 @@ const Tags = () => {
 
   return (
     <>
-      <h1>ALL TAGS</h1>
+      <h1 className="allTagsHeader">ALL TAGS</h1>
+      <p>Click to view events tagged under each tag</p>
         <AllTags allTags={allTags} changeTag={changeTag}/>
 
       {tagTerm ? (

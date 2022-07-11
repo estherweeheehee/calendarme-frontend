@@ -8,6 +8,7 @@ const Home = () => {
     }
     return (
         <>
+        <h1 className="title">Calendar ME</h1>
         <div className="dates">
             
             <p className="date" onClick={() => handleClick("01")}>JANUARY</p>
