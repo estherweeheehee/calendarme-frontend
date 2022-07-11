@@ -10,8 +10,12 @@ const Navbar = () => {
         <Link to="/">
           <h1>CalendarME</h1>
         </Link>
+        <Link className="navButton" to="/calendar">
+          CALENDAR
+        </Link>
+
         <Link className="navButton" to="/tags">
-          VIEW TAGS
+          TAGS
         </Link>
         
         <div className="navRight">

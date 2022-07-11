@@ -1,31 +1,16 @@
-import { Link, Outlet, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const Home = () => {
     let navigate = useNavigate();
-    const handleClick = (month) => {
-        
-        navigate(`/view?month=${month}`)
-    }
+
     return (
-        <>
-        <h1 className="title">Calendar ME</h1>
-        <div className="dates">
-            
-            <p className="date" onClick={() => handleClick("01")}>JANUARY</p>
-            <p className="date" onClick={() => handleClick("02")}>FEBRUARY</p>
-            <p className="date" onClick={() => handleClick("03")}>MARCH</p>
-            <p className="date" onClick={() => handleClick("04")}>APRIL</p>
-            <p className="date" onClick={() => handleClick("05")}>MAY</p>
-            <p className="date" onClick={() => handleClick("06")}>JUNE</p>
-            <p className="date" onClick={() => handleClick("07")}>JULY</p>
-            <p className="date" onClick={() => handleClick("08")}>AUGUST</p>
-            <p className="date" onClick={() => handleClick("09")}>SEPTEMBER</p>
-            <p className="date" onClick={() => handleClick("10")}>OCTOBER</p>
-            <p className="date" onClick={() => handleClick("11")}>NOVEMBER</p>
-            <p className="date" onClick={() => handleClick("12")}>DECEMBER</p>
-            
-        </div>
-     
+        <>  
+        <video className="background-video" autoPlay loop muted>
+<source src="https://i.imgur.com/8GgUsYt.mp4" type="video/mp4" />
+</video>
+            <h1 className="title">Stay updated on your schedule, Esther</h1>
+            <span className="monthButton" onClick={() => navigate("/calendar")}>View by Months</span>
+            <span className="tagButton" onClick={() => navigate("/tags")}>View by Tags</span>
         </>
     )
 }

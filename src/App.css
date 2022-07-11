@@ -6,8 +6,31 @@ body {
 
 .title {
   font-family: 'Permanent Marker', cursive;
-  font-size: 5em;
-  color:#2b3957;
+  font-size: 4em;
+  width: 50vw;
+  margin: 2em auto;
+  /* color:#2b3957; */
+  color:#dbe5f7;
+  /* text-shadow: 1px 1px #c3c3c5; */
+}
+
+.monthButton, .tagButton {
+  margin: 0 2em 0 2em;
+  background-color:#b8c8ec;
+  padding: 1em;
+  border-radius: 20px;
+}
+
+.background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
 nav {
@@ -307,10 +330,9 @@ label {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
-.allTagsHeader {
+.allTagsHeader, .monthsViewHeader {
   font-family: 'Permanent Marker', cursive;
-  margin-top: 3em;
- 
+  margin-top: 2em;
 }
 
 .allTags {

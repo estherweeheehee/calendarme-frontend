@@ -5,9 +5,10 @@ import {
   Route,
 } from "react-router-dom";
 import Main from './pages/Main';
-import Home from './pages/Home';
 import View from './pages/View';
 import Tags from './pages/Tags';
+import MonthsView from './pages/MonthsView';
+import Home from './pages/Home';
 
 function App() {
 
@@ -15,8 +16,9 @@ function App() {
     <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Main />}>
+            <Route path="/" element={<Main />} >
               <Route path="/" element={<Home />} />
+              <Route path="/calendar" element={<MonthsView />} />
                 <Route path="/view" element={<View />} />
                 <Route path="/tags" element={<Tags />} />
               
