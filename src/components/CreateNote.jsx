@@ -26,7 +26,6 @@ const CreateNote = ({addNote}) => {
                 [field]: event.target.value
             })
         }
-        
     }
 
     const handleSubmit = (event) => {

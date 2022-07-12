@@ -11,7 +11,10 @@ const AllTags = ({ allTags, changeTag }) => {
        
         const arr = []
         for (let tag in allTags) {
-            const size = allTags[tag];
+            let size = allTags[tag];
+            if (size > 6) {
+                size = 6
+            }
             arr.push(
                 <div key={tag} className="indivAllTags" style={{fontSize: `${size}em`}} onClick={() => handleClick(tag)}>
                     {tag}
